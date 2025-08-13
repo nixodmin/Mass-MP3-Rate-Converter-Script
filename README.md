@@ -49,10 +49,39 @@ pip install pydub
 
 Исходные файлы удаляются после успешной конвертации (замена происходит на месте).
 
+## Неочевидные нюансы
 
+В зависимости от версии Линукс возможно придётся использовать команды
+```bash
+   python3 mmp3conv.py
+   ```
 
+вместо
 
+```bash
+   python mmp3conv.py
+   ```
 
---- 
+pydub возможно придётся устанавливать 
 
-Вы можете скопировать это описание в файл `README.md` в своём репозитории.
+```bash
+pip3 install pydub
+```
+
+вместо 
+
+```bash
+pip install pydub
+```
+
+**Поэтому**, чтобы избежать на Линуксе "танцев с бубнами" рекомендую использовать виртуальное окружение для Python:
+
+```bash
+sudo apt install python3.12-venv
+
+python3 -m venv my-venv
+
+my-venv/bin/pip install pydub
+
+my-venv/bin/python3 mmp3conv.py
+```
